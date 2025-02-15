@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
     <link rel="stylesheet" href="css/main.css">
+
+     <!-- Preconnect to external domains -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+      <!-- Favicon in multiple formats -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Empty favicon to prevent 404 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
 </head>
 <body>
     <div id="app">
@@ -21,7 +29,7 @@
                         <div class="cart-items">
                             <div v-for="(item, index) in cart" :key="index" class="cart-item">
                                 <!-- Product Thumbnail -->
-                                <img :src="item.thumbnail" class="cart-item-thumb" alt="Product Thumbnail">
+                                <img :src="item.thumbnail" class="cart-item-thumb" alt="Product Thumbnail" loading="lazy">
                     
                                 <!-- Product Name -->
                                 <div class="cart-item-details">
@@ -100,7 +108,7 @@
                 <!-- Product Grid -->
                 <div class="product-grid">
                     <div v-for="product in filteredProducts" :key="product.id" class="product-card">
-                        <img :src="product.thumbnail" @click="viewProduct(product)" class="product-thumb">
+                        <img :src="product.thumbnail" @click="viewProduct(product)" class="product-thumb" loading="lazy">
                         <h3 @click="viewProduct(product)">{{ product.name }}</h3>
                         <div class="category-tags">
                             <span v-for="category in product.categories" :key="category" 
@@ -114,8 +122,6 @@
                 </div>
         </main>
     </div>
-    <footer-component></footer-component>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="data/products.js"></script>

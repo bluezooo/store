@@ -7,6 +7,12 @@
     <title>Product Details - Shop</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Favicon in multiple formats -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Empty favicon to prevent 404 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
     <div id="app">
@@ -22,7 +28,7 @@
                         <div class="cart-items">
                             <div v-for="(item, index) in cart" :key="index" class="cart-item">
                                 <!-- Product Thumbnail -->
-                                <img :src="item.thumbnail" class="cart-item-thumb" alt="Product Thumbnail">
+                                <img :src="item.thumbnail" class="cart-item-thumb" alt="Product Thumbnail" loading="lazy">
                     
                                 <!-- Product Name -->
                                 <div class="cart-item-details">
@@ -100,7 +106,7 @@
                 </nav>
 
                 <div class="product-detail" v-if="product">
-                    <img :src="product.image" :alt="product.name" class="product-image">
+                    <img :src="product.image" :alt="product.name" class="product-image" loading="lazy">
                     <div class="product-info">
                         <h1>{{ product.name }}</h1>
                         <div class="price">${{ product.price.toFixed(2) }}</div>

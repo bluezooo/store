@@ -61,6 +61,13 @@ const mainApp = {
             this.cart.splice(index, 1); // Remove item from cart
             this.saveCart();
         },
+        clearCart() {
+            this.cart = [];
+            this.saveCart();
+        },
+        checkout() {
+            window.location.href = 'checkout.html';
+        },
         getCategoryName(categoryId) {
             const category = this.categories.find(c => c.id === categoryId);
             return category ? category.name : categoryId;
