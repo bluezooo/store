@@ -67,18 +67,20 @@
                         <!-- Clear All Button -->
                         <button 
                             class="clear-btn" 
-                            @click="clearCart"
+                            
                             :disabled="cart.length === 0"
                         >
+                        <!-- @click="clearCart" -->
                             Clear All
                         </button>
 
                         <!-- Checkout Button -->
                         <button 
                             class="checkout-btn" 
-                            @click="checkout"
+
                             :disabled="cart.length === 0"
                         >
+                        <!-- @click="checkout" -->
                             Checkout
                         </button>
                     </div>
