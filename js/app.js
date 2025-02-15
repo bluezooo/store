@@ -107,5 +107,5 @@ const mainApp = {
 // createApp(mainApp).mount('#app');
 const app = createApp(mainApp);
 app.config.warnHandler = () => {}; // Silence warnings
-// app.config.errorHandler = () => {}; // Silence errors
+app.config.errorHandler = () => {}; // Silence errors
 app.mount('#app');
